@@ -16,7 +16,7 @@ module.exports = () => {
     .limit(1)
     .then((users) => users[0].age);
 
-  return Promise.all([minAge, maxAge]).then((results) => {
-    return { min: results[0], max: results[1] };
+  return Promise.all([minAge, maxAge]).then(([min, max]) => {
+    return { min, max };
   });
 };
