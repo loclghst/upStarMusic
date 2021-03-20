@@ -7,8 +7,4 @@ const Artist = require('../models/artist');
  */
 module.exports = (_id) => {
   return Artist.findByIdAndRemove(_id);
-
-  //Alternatively
-  // Artist.findOneAndRemove({_id: _id});
-  // Artist.remove({_id : _id});
 };
