@@ -10,14 +10,14 @@ module.exports = () => {
 		  					.sort({age: 1})
 		  					.limit(1)
 		  					.then((users) => users[0].age);
-		  			
+
 	const maxYearsActive = Artist.find({})
 								 .sort({age :-1})
 								 .limit(1)
 							   	 .then((users) =>users[0].age);
-	
+
 	return Promise.all([minYearsActive,maxYearsActive])
-				  .then([results] =>{
+				  .then(([results]) => {
 				  	return {min: results[0], max: results[1]}
 				  });
 
